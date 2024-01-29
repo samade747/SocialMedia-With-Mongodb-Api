@@ -1,11 +1,19 @@
-const express = require("express");
-const app = express();
-const mongoose = require('mongoose');
-const helmet = require('helmet');
-const morgan = require('morgan');
+import express from "express";
 
+import mongoose from "mongoose";
+import helmet from "helmet";
+import morgan from "morgan";
+
+import dotenv from "dotenv";
+
+import { dbConnection } from './utils/config.js'
+
+const app = express()
 dotenv.config();
+app.use(express.json())
+dbConnection()
 
-app.listen(8800, ()=>{
-    console.log('Backend server is runnng')
-})
+app.listen(process.env.PORT, () => {
+    // Log a message indicating the port the server is listening on
+    console.log(`Server is working on port number ${process.env.PORT}`)
+}) 
