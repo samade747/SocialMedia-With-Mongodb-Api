@@ -1,7 +1,7 @@
 import express from "express";
-const userRouter = express.Router()
+const userRoute = express.Router()
 
-userRouter.get("/", (req, res)=>{
+userRoute.get("/", (req, res)=>{
     res.send('hey its user routes')
 })
 
