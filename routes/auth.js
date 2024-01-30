@@ -1,9 +1,11 @@
 import express from "express";
+import { loginController, registerController } from "../controllers/authControllers.js";
+import users from "../models/Users.js"
+
+
 const authRoute = express.Router()
 
-authRoute.get("/", (req, res)=>{
-    res.send('hey its user routes')
-})
+authRoute.post("/register", registerController);
 
 
 
@@ -15,4 +17,4 @@ authRoute.get("/", (req, res)=>{
 
 
 
-export default authRouter;
+export default authRoute;

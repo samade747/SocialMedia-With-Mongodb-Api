@@ -15,4 +15,4 @@ userRoute.get("/", (req, res)=>{
 
 
 
-export default userRouter;
+export default userRoute;
