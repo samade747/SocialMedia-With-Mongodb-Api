@@ -1,42 +1,86 @@
+// import mongoose from "mongoose";
+
+// const UserSchema = new mongoose.Schema({
+//     username:{
+//         type:String,
+//         require: true,
+//         min: 3,
+//         max: 20,
+//         unique: true
+//     },
+//     email:{
+//         type: String,
+//         required: true,
+//         max: 50,
+//         unique: true
+//     },
+//     password:{
+//         type:String,
+//         required: true,
+//         min:6,        
+//     },
+//     profilePicture:{
+//         type:String,
+//         default: ""
+//     },
+//     coverPicture:{
+//         type:String,
+//         default: ""
+//     },
+//     followers:{
+//         type: Array,
+//         default:[]
+//     },
+//     isAdmin:{
+//         type: Boolean,
+//         default:false        
+//     }, 
+// },
+// {timestamps: true}
+// );
+
+// export default mongoose.model("User", UserSchema);
+
+// User model
 import mongoose from "mongoose";
 
+// Define user schema
 const UserSchema = new mongoose.Schema({
-    username:{
-        type:String,
-        require: true,
+    username: {
+        type: String,
+        required: true,
         min: 3,
         max: 20,
         unique: true
     },
-    email:{
+    email: {
         type: String,
         required: true,
         max: 50,
         unique: true
     },
-    password:{
-        type:String,
+    password: {
+        type: String,
         required: true,
-        min:6,        
+        min: 6
     },
-    profilePicture:{
-        type:String,
+    profilePicture: {
+        type: String,
         default: ""
     },
-    coverPicture:{
-        type:String,
+    coverPicture: {
+        type: String,
         default: ""
     },
-    followers:{
+    followers: {
         type: Array,
-        default:[]
+        default: []
     },
-    isAdmin:{
+    isAdmin: {
         type: Boolean,
-        default:false        
-    }, 
-},
-{timestamps: true}
-);
+        default: false
+    }
+}, { timestamps: true });
 
-module.exports = mongoose.model("User", UserSchema);
+// Create and export User model
+export default mongoose.model("User", UserSchema);
