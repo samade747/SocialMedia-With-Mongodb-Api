@@ -3,27 +3,27 @@
 
 import express from "express";
 import { deleteUserController, followUserController, getUserController, getUsersController, unFollowUserController, updateUserController } from "../controllers/usersControllers.js";
-const userRouter = express.Router();
-
-
-
-
-
-
-
-
-
-
-// export default userRoute;
-
-
-// User route
-import express from "express";
 const userRoute = express.Router();
 
-// Define user route handlers
-userRoute.get("/", (req, res) => {
-    res.send('hey its user routes');
-});
+// update user
+userRoute.put("/:id", updateUserController);
+// delete user
+userRoute.delete("/:id", deleteUserController);
+// // get a user
+userRoute.get("/:id", getUserController);
+// // get all users
+userRoute.get("/", getUsersController);
+// // follow a user
+userRoute.put("/:id/follow", followUserController);
+// // unfollow a user
+userRoute.put("/:id/unfollow", unFollowUserController);
 
 export default userRoute;
+
+
+
+
+
+
+
+

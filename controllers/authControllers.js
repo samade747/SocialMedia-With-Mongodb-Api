@@ -34,78 +34,7 @@ try {
 };    
 };
 
-// Authentication controller
-// import User from "../models/Users.js";
 
-// // Controller function for user registration
-// export const registerController = async (req, res) => {
-//     try {
-//         const { username, email, password } = req.body;
-
-//         // Create a new user
-//         const newUser = await User.create({
-//             username,
-//             email,
-//             password,
-//         });
-
-//         res.status(201).json({
-//             status: true,
-//             message: "User created successfully",
-//             data: newUser,
-//         });
-//     } catch (error) {
-//         res.status(400).json({
-//             status: false,
-//             message: error.message,
-//         });
-//     }
-// };
-
-// login controller
-
-// export const loginController = async (req, res) => {
-//     try {
-//       const {email, password} = req.body;
-//       console.log(email, password);
-
-//       if(!email || !password){
-//         return res.status(400).json({
-//           status: false,
-//           message: 'password & email required',
-//         })
-//       }
-//         const isUserExists = await User.findOne({ email });
-//         console.log(isUserExists);
-
-//         if(isUserExists){
-//           const validPassword = await bcrypt.compare(password, isUserExists.password);
-
-//           if(isUserExists.password === password){
-//             res.status(200);
-//             res.json({
-//               status: true,
-//               message: 'login Sucessfully',
-//             });
-//           } else {
-//             res.status(400);
-//             res.json({
-//               status: false,
-//               message: "Invalid Password",
-//             })
-//           }
-//         } else {
-//           res.status(400);
-//           res.json({
-//             status: false,
-//             message: 'Invalid email'
-//           })
-//         }
-//       }      
-//     } catch (error) {
-//       res.status(404);
-//     }
-// }
 
 export const loginController = async (req, res) => {
   try {
