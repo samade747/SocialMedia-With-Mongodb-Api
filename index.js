@@ -1,34 +1,3 @@
-// import express from "express";
-
-// import mongoose from "mongoose";
-// import helmet from "helmet";
-// import morgan from "morgan";
-
-// import dotenv from "dotenv";
-// import userRoute from "./routes/users.js";
-// import authRoute from "./routes/auth.js";
-
-
-// import { dbConnection } from './utils/config.js'
-
-
-// const app = express()
-// dotenv.config();
-// dbConnection()
-
-// // middlware
-// app.use(express.json())
-// app.use(helmet())
-// app.use(morgan('common'))
-
-// app.use("/api/users", userRoute)
-// app.use("/api/auth", authRoute)
-
-// app.listen(process.env.PORT, () => {
-//     // Log a message indicating the port the server is listening on
-//     console.log(`Server is working on port number ${process.env.PORT}`)
-// }) 
-
 // Import necessary packages
 import express from "express";
 import mongoose from "mongoose";

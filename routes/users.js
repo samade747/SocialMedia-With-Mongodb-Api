@@ -1,10 +1,9 @@
 // import express from "express";
 // const userRoute = express.Router()
 
-// userRoute.get("/", (req, res)=>{
-//     res.send('hey its user routes')
-// })
-
+import express from "express";
+import { deleteUserController, followUserController, getUserController, getUsersController, unFollowUserController, updateUserController } from "../controllers/usersControllers.js";
+const userRouter = express.Router();
 
 
 

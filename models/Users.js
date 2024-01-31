@@ -76,11 +76,35 @@ const UserSchema = new mongoose.Schema({
         type: Array,
         default: []
     },
+    following: {
+        type: Array,
+        default: []
+    },
     isAdmin: {
         type: Boolean,
         default: false
-    }
-}, { timestamps: true });
+    },
+    desc: {
+        type: String,
+        max: 100,
+    },
+     city: {
+        type: String,
+        max: 50,
+    },
+      from: {
+        type: String,
+        max: 50,
+    },
+    relationship: {
+      type: Number,
+      enum: [1, 2, 3],
+        },
+    },
+    { timestamps: true }
+);
+  
+        
 
 // Create and export User model
 export default mongoose.model("User", UserSchema);
