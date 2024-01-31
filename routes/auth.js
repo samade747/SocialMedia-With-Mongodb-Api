@@ -21,11 +21,12 @@
 
 // Authentication route
 import express from "express";
-import { registerController } from "../controllers/authControllers.js";
+import { registerController, loginController } from "../controllers/authControllers.js";
 
 const authRoute = express.Router();
 
 // Define authentication route handlers
 authRoute.post("/register", registerController);
+authRoute.post("/login", loginController);
 
 export default authRoute;

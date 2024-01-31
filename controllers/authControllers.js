@@ -61,3 +61,91 @@ try {
 //         });
 //     }
 // };
+
+// login controller
+
+// export const loginController = async (req, res) => {
+//     try {
+//       const {email, password} = req.body;
+//       console.log(email, password);
+
+//       if(!email || !password){
+//         return res.status(400).json({
+//           status: false,
+//           message: 'password & email required',
+//         })
+//       }
+//         const isUserExists = await User.findOne({ email });
+//         console.log(isUserExists);
+
+//         if(isUserExists){
+//           const validPassword = await bcrypt.compare(password, isUserExists.password);
+
+//           if(isUserExists.password === password){
+//             res.status(200);
+//             res.json({
+//               status: true,
+//               message: 'login Sucessfully',
+//             });
+//           } else {
+//             res.status(400);
+//             res.json({
+//               status: false,
+//               message: "Invalid Password",
+//             })
+//           }
+//         } else {
+//           res.status(400);
+//           res.json({
+//             status: false,
+//             message: 'Invalid email'
+//           })
+//         }
+//       }      
+//     } catch (error) {
+//       res.status(404);
+//     }
+// }
+
+export const loginController = async (req, res) => {
+  try {
+      const { email, password } = req.body;
+
+      if (!email || !password) {
+          return res.status(400).json({
+              status: false,
+              message: 'Email and password are required',
+          });
+      }
+
+      const user = await User.findOne({ email });
+
+      if (!user) {
+          return res.status(404).json({
+              status: false,
+              message: 'Invalid email',
+          });
+      }
+
+      const validPassword = await bcrypt.compare(password, user.password);
+
+      if (!validPassword) {
+          return res.status(400).json({
+              status: false,
+              message: 'Invalid password',
+          });
+      }
+
+      res.status(200).json({
+          status: true,
+          message: 'Login successful',
+          user: user, // Optionally, you can send the user details back to the client
+      });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({
+          status: false,
+          message: 'Internal server error',
+      });
+  }
+};
