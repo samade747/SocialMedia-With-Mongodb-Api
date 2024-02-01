@@ -8,6 +8,7 @@ import dotenv from "dotenv";
 // Import routes
 import userRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
+import postRoute from "./routes/post.js";
 
 // Import database connection function
 import { dbConnection } from './utils/config.js';
