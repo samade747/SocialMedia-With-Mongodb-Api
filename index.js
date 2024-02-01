@@ -28,8 +28,9 @@ app.use(helmet());
 app.use(morgan('common'));
 
 // Routes
-app.use("/api/users", userRoute);
+app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/post", postRoute);
 
 // Start server
 app.listen(process.env.PORT, () => {

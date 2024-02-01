@@ -1,7 +1,7 @@
 import express from "express"
 const postRoute = express.Router();
 
-// import { createPostController, deletePostController, getPostController, getPostsByTimeController, likePostController, updatePostController } from "../controllers/postsControllers.js";
+import { createPostController, deletePostController, getPostController, getPostsByTimeController, likePostController, updatePostController } from "../controllers/postsControllers.js";
 
 // create a post
 postRoute.post('/', createPostController)
@@ -22,4 +22,4 @@ postRoute.get('/:id', getPostController)
 postRoute.get('/timeline/all', getPostsByTimeController)
 
 
-export default postRoute
+export default postRoute;
