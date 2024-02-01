@@ -1,6 +1,8 @@
 // import Users from "../models/Users.js";
 import User from "../models/Users.js";
-import Post from "../models/post.js";
+// import Post from "../models/post.js";
+import { Post } from "../models/post.js";
+
 
 
 // create a post 
